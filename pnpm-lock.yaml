@@ -20,6 +20,9 @@ importers:
       '@sentry/node':
         specifier: ^9.27.0
         version: 9.27.0
+      '@xmorse/tailwind-merge':
+        specifier: ^3.3.1
+        version: 3.3.1
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -1248,6 +1251,9 @@ packages:
 
   '@xmorse/deployment-utils@0.3.0':
     resolution: {integrity: sha512-V3OyOfU2Nj9JGQUIyEz9nVJIRKiEI/d9fLbpO6YMrHuDC0hgvACPZ0wI6D4aR8t3qwS8A3+cDnqZkxN0blT3Nw==}
+
+  '@xmorse/tailwind-merge@3.3.1':
+    resolution: {integrity: sha512-itRg5D0QVfw0480nAJsBoOUaByKPFw9QHotVu+oWSv3cmcK2dCsQkSGwkfXdFQD2wNd2wJliGqwk2dKfQJ/FrQ==}
 
   abort-controller@3.0.0:
     resolution: {integrity: sha512-h8lQ8tacZYnR3vNQTgibj+tODHI5/+l06Au2Pcriv/Gmet0eaj4TwWH41sO9wnHDiQsEj19q0drzdWdeAHtweg==}
@@ -3660,6 +3666,8 @@ snapshots:
       - sugarss
       - supports-color
       - terser
+
+  '@xmorse/tailwind-merge@3.3.1': {}
 
   abort-controller@3.0.0:
     dependencies:
