@@ -305,10 +305,10 @@ export default function QuizDesign({ loaderData }: Route.ComponentProps) {
   }
 
   return (
-    <div className="container mx-auto py-8">
-      <div className="max-w-4xl mx-auto">
-        {/* Header */}
-        <div className="mb-6">
+    <div className="min-h-screen bg-gray-50">
+      {/* Header */}
+      <div className="bg-white border-b border-gray-200 px-4 py-4">
+        <div className="max-w-7xl mx-auto">
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-3">
               {currentQuestionIndex > 0 && (
@@ -332,22 +332,27 @@ export default function QuizDesign({ loaderData }: Route.ComponentProps) {
           </div>
           <Progress value={progress} className="h-2" />
         </div>
+      </div>
 
-        {/* Design Preview */}
-        <Card className="mb-6">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              Design Preview
-              <Badge>{currentQuestion.category}</Badge>
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div
-              className="border rounded-lg p-4 bg-white"
-              dangerouslySetInnerHTML={{ __html: htmlContent }}
-            />
-          </CardContent>
-        </Card>
+      {/* Design Preview - Full Width */}
+      <div className="w-full bg-white border-b border-gray-200">
+        <div className="px-4 py-4">
+          <div className="max-w-7xl mx-auto">
+            <div className="flex items-center gap-2 mb-4">
+              <h2 className="text-lg font-semibold">Design Preview</h2>
+              <Badge variant="secondary">{currentQuestion.category}</Badge>
+            </div>
+          </div>
+        </div>
+        <div
+          className="w-full bg-white min-h-96"
+          dangerouslySetInnerHTML={{ __html: htmlContent }}
+        />
+      </div>
+
+      {/* Question Section */}
+      <div className="px-4 py-8">
+        <div className="max-w-4xl mx-auto">
 
         {/* Question */}
         <Card>
@@ -412,6 +417,7 @@ export default function QuizDesign({ loaderData }: Route.ComponentProps) {
             )}
           </CardContent>
         </Card>
+        </div>
       </div>
     </div>
   )

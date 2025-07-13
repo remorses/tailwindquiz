@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Card Component</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 py-12">
+    <div class="max-w-md mx-auto">
+        <div class="bg-white rounded-2xl shadow-xl overflow-hidden" data-quiz="shadow">
+            <!-- Header -->
+            <div class="bg-gradient-to-r from-purple-600 to-blue-600 px-6 py-8 text-white text-center">
+                <h3 class="text-2xl font-bold mb-2" data-quiz="font-size">Pro Plan</h3>
+                <p class="text-purple-100">Perfect for growing teams</p>
+                <div class="mt-4">
+                    <span class="text-4xl font-bold">$29</span>
+                    <span class="text-purple-200">/month</span>
+                </div>
+            </div>
+
+            <!-- Features -->
+            <div class="p-6">
+                <ul class="space-y-4" data-quiz="gap">
+                    <li class="flex items-center">
+                        <svg class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span class="text-gray-700">Up to 50 team members</span>
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span class="text-gray-700">Advanced analytics</span>
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span class="text-gray-700">Priority support</span>
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span class="text-gray-700">99.9% uptime SLA</span>
+                    </li>
+                </ul>
+
+                <!-- CTA Button -->
+                <div class="mt-8">
+                    <button class="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold py-3 px-6 rounded-lg hover:from-purple-700 hover:to-blue-700 transform transition-all duration-200 hover:scale-105" data-quiz="bg-color">
+                        Get Started
+                    </button>
+                </div>
+
+                <!-- Additional info -->
+                <div class="mt-4 text-center">
+                    <p class="text-sm text-gray-500">
+                        14-day free trial • No credit card required
+                    </p>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="bg-gray-50 px-6 py-4 border-t border-gray-200" data-quiz="border-color">
+                <p class="text-xs text-gray-600 text-center">
+                    Cancel anytime. Questions? 
+                    <a href="#" class="text-purple-600 hover:text-purple-800 font-medium">Contact us</a>
+                </p>
+            </div>
+        </div>
+
+        <!-- Comparison -->
+        <div class="mt-8 text-center">
+            <p class="text-gray-600 mb-4">Compare all plans</p>
+            <div class="grid grid-cols-3 gap-4 text-sm" data-quiz="gap">
+                <div class="bg-white p-4 rounded-lg shadow-sm">
+                    <div class="font-semibold">Starter</div>
+                    <div class="text-gray-500">$9/mo</div>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-sm ring-2 ring-purple-600">
+                    <div class="font-semibold">Pro</div>
+                    <div class="text-gray-500">$29/mo</div>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-sm" data-quiz="p">
+                    <div class="font-semibold">Enterprise</div>
+                    <div class="text-gray-500">$99/mo</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
