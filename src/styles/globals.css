@@ -123,6 +123,5 @@
 }
 
 .quiz-highlight {
-    @apply ring-3 ring-blue-500 relative z-10 rounded ring-offset-2;
-    animation: quiz-pulse 2s ease-in-out infinite;
+    @apply ring-3 ring-blue-900 relative z-10 rounded ring-offset-2;
 }

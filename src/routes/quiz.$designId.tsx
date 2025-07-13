@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { data } from 'react-router'
-import { Link, useNavigate } from 'react-router'
+import { Link, useNavigate, useSearchParams } from 'react-router'
 import { Card, CardContent, CardHeader, CardTitle } from 'website/src/components/ui/card'
 import { Button } from 'website/src/components/ui/button'
 import { Progress } from 'website/src/components/ui/progress'
@@ -59,13 +59,42 @@ function generatePlaceholderOptions(correctAnswer: string, category: DefaultClas
 export default function QuizDesign({ loaderData }: Route.ComponentProps) {
   const { designId, htmlContent } = loaderData
   const navigate = useNavigate()
+  const [searchParams, setSearchParams] = useSearchParams()
 
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
+  // Get current question index from URL params, default to 0
+  const currentQuestionIndex = Math.max(0, parseInt(searchParams.get('q') || '0', 10))
+  
+  // Helper function to update question index in URL
+  const updateQuestionIndex = (newIndex: number) => {
+    const newSearchParams = new URLSearchParams(searchParams)
+    if (newIndex === 0) {
+      newSearchParams.delete('q')
+    } else {
+      newSearchParams.set('q', newIndex.toString())
+    }
+    setSearchParams(newSearchParams, { replace: true })
+  }
+  
   const [score, setScore] = useState(0)
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null)
   const [showResult, setShowResult] = useState(false)
   const [questions, setQuestions] = useState<QuizQuestion[]>([])
   const [quizComplete, setQuizComplete] = useState(false)
+  
+  // Validate and clamp question index based on available questions
+  useEffect(() => {
+    if (questions.length > 0 && currentQuestionIndex >= questions.length) {
+      console.log(`[Quiz] Question index ${currentQuestionIndex} out of bounds, redirecting to last question`)
+      updateQuestionIndex(questions.length - 1)
+    }
+  }, [questions.length, currentQuestionIndex])
+  
+  // Reset question state when currentQuestionIndex changes (URL navigation)
+  useEffect(() => {
+    setSelectedAnswer(null)
+    setShowResult(false)
+    setQuizComplete(false)
+  }, [currentQuestionIndex])
 
   useEffect(() => {
     // Parse HTML and extract quiz questions
@@ -73,20 +102,55 @@ export default function QuizDesign({ loaderData }: Route.ComponentProps) {
     const doc = parser.parseFromString(htmlContent, 'text/html')
     const quizElements = doc.querySelectorAll('[data-quiz]')
 
-    const extractedQuestions: QuizQuestion[] = Array.from(quizElements).map((element, index) => {
+    const extractedQuestions: QuizQuestion[] = []
+    const skippedQuestions: Array<{element: string, category: string, reason: string}> = []
+    const validElementIndices: number[] = []
+
+    Array.from(quizElements).forEach((element, index) => {
       const category = element.getAttribute('data-quiz') as DefaultClassGroupIds
       const relevantClasses = getElementClassesForCategory(element, category)
-      const correctAnswer = relevantClasses[0] || 'unknown'
 
-      return {
+      if (relevantClasses.length === 0) {
+        // Skip this question - no relevant classes found
+        const elementInfo = {
+          element: element.tagName.toLowerCase(),
+          category,
+          reason: `No classes found for category '${category}'`
+        }
+        skippedQuestions.push(elementInfo)
+        console.log(`[Quiz Skip] Skipping question ${index + 1}:`, elementInfo)
+        return
+      }
+
+      const correctAnswer = relevantClasses[0]
+
+      // Track the DOM index of this valid question
+      validElementIndices.push(index)
+
+      extractedQuestions.push({
         element: element.outerHTML,
         category,
         correctAnswer,
         options: generatePlaceholderOptions(correctAnswer, category)
-      }
+      })
     })
 
+    if (skippedQuestions.length > 0) {
+      console.log(`[Quiz Info] Skipped ${skippedQuestions.length} questions out of ${quizElements.length} total elements with data-quiz attributes`)
+      console.table(skippedQuestions)
+    }
+
+    if (extractedQuestions.length === 0) {
+      console.error('[Quiz Error] No valid quiz questions found! All elements were skipped.')
+    }
+
+    console.log(`[Quiz Info] Created ${extractedQuestions.length} valid quiz questions`)
+    console.log(`[Quiz Info] Valid element indices:`, validElementIndices)
+
     setQuestions(extractedQuestions)
+
+    // Store the mapping for highlighting
+    ;(window as any).__quizValidElementIndices = validElementIndices
   }, [htmlContent])
 
   // Highlight current quiz element
@@ -111,20 +175,32 @@ export default function QuizDesign({ loaderData }: Route.ComponentProps) {
       throw new Error('No quiz elements found in rendered HTML')
     }
 
-    if (currentQuestionIndex >= allQuizElements.length) {
-      console.error(`[Quiz Error] Question index ${currentQuestionIndex} is out of bounds. Only ${allQuizElements.length} quiz elements found.`)
-      throw new Error(`Question index out of bounds: ${currentQuestionIndex}/${allQuizElements.length}`)
+    // Get the mapping of valid element indices
+    const validElementIndices = (window as any).__quizValidElementIndices as number[]
+
+    if (!validElementIndices || currentQuestionIndex >= validElementIndices.length) {
+      console.error(`[Quiz Error] Question index ${currentQuestionIndex} is out of bounds for valid questions. Only ${validElementIndices?.length || 0} valid questions found.`)
+      throw new Error(`Question index out of bounds: ${currentQuestionIndex}/${validElementIndices?.length || 0}`)
     }
 
-    // Get the current quiz element by index (DOM order)
-    const currentElement = allQuizElements[currentQuestionIndex]
+    // Get the DOM index for the current question
+    const domElementIndex = validElementIndices[currentQuestionIndex]
+    console.log(`[Quiz Debug] Question ${currentQuestionIndex + 1} maps to DOM element ${domElementIndex + 1}`)
+
+    // Get the current quiz element by its DOM index
+    const currentElement = allQuizElements[domElementIndex]
 
     if (!currentElement) {
-      console.error(`[Quiz Error] Could not find quiz element at index ${currentQuestionIndex}`)
-      throw new Error(`Quiz element not found at index ${currentQuestionIndex}`)
+      console.error(`[Quiz Error] Could not find quiz element at DOM index ${domElementIndex}`)
+      throw new Error(`Quiz element not found at DOM index ${domElementIndex}`)
     }
 
-    console.log(`[Quiz Debug] Highlighting element:`, currentElement)
+    console.log(`[Quiz Debug] Highlighting element:`, {
+      tagName: currentElement.tagName,
+      className: currentElement.className,
+      dataQuiz: currentElement.getAttribute('data-quiz'),
+      textContent: currentElement.textContent?.slice(0, 50) + '...'
+    })
 
     // Add highlight to current element
     currentElement.classList.add('quiz-highlight')
@@ -149,33 +225,42 @@ export default function QuizDesign({ loaderData }: Route.ComponentProps) {
   const progress = questions.length > 0 ? ((currentQuestionIndex + 1) / questions.length) * 100 : 0
 
   const handleAnswerSelect = (answer: string) => {
-    setSelectedAnswer(answer)
-  }
+    // Don't allow selecting if already showing result
+    if (showResult) return
 
-  const handleNextQuestion = () => {
-    if (selectedAnswer === currentQuestion.correctAnswer) {
+    setSelectedAnswer(answer)
+
+    // Check if answer is correct and update score
+    if (answer === currentQuestion.correctAnswer) {
       setScore(score + 1)
     }
 
     setShowResult(true)
 
+    // Auto-advance to next question after showing result
     setTimeout(() => {
       if (currentQuestionIndex < questions.length - 1) {
-        setCurrentQuestionIndex(currentQuestionIndex + 1)
+        updateQuestionIndex(currentQuestionIndex + 1)
         setSelectedAnswer(null)
         setShowResult(false)
       } else {
         setQuizComplete(true)
       }
-    }, 1500)
+    }, 900)
   }
 
   const handleRestart = () => {
-    setCurrentQuestionIndex(0)
+    updateQuestionIndex(0)
     setScore(0)
     setSelectedAnswer(null)
     setShowResult(false)
     setQuizComplete(false)
+  }
+
+  const handlePreviousQuestion = () => {
+    if (currentQuestionIndex > 0) {
+      updateQuestionIndex(currentQuestionIndex - 1)
+    }
   }
 
   if (questions.length === 0) {
@@ -225,7 +310,22 @@ export default function QuizDesign({ loaderData }: Route.ComponentProps) {
         {/* Header */}
         <div className="mb-6">
           <div className="flex items-center justify-between mb-4">
-            <h1 className="text-2xl font-bold">Quiz: {designId}</h1>
+            <div className="flex items-center gap-3">
+              {currentQuestionIndex > 0 && (
+                <Button 
+                  variant="outline" 
+                  size="sm" 
+                  onClick={handlePreviousQuestion}
+                  className="flex items-center gap-2"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  </svg>
+                  Back
+                </Button>
+              )}
+              <h1 className="text-2xl font-bold">Quiz: {designId}</h1>
+            </div>
             <Badge variant="outline">
               Question {currentQuestionIndex + 1} of {questions.length}
             </Badge>
@@ -267,14 +367,14 @@ export default function QuizDesign({ loaderData }: Route.ComponentProps) {
                   <Button
                     key={option}
                     variant={isSelected ? "default" : "outline"}
-                    className={`justify-start text-left ${
+                    className={`justify-start text-left transition-all duration-200 ${
                       showResult
                         ? isCorrect
-                          ? 'bg-green-500 hover:bg-green-600'
+                          ? 'bg-green-500 hover:bg-green-600 text-white'
                           : isWrong
-                            ? 'bg-red-500 hover:bg-red-600'
-                            : ''
-                        : ''
+                            ? 'bg-red-500 hover:bg-red-600 text-white'
+                            : 'opacity-50'
+                        : 'hover:bg-accent'
                     }`}
                     onClick={() => {handleAnswerSelect(option)}}
                     disabled={showResult}
@@ -285,20 +385,28 @@ export default function QuizDesign({ loaderData }: Route.ComponentProps) {
               })}
             </div>
 
-            {selectedAnswer && !showResult && (
-              <Button onClick={handleNextQuestion} className="w-full">
-                {currentQuestionIndex < questions.length - 1 ? 'Next Question' : 'Finish Quiz'}
-              </Button>
-            )}
-
             {showResult && (
               <div className="text-center py-4">
                 {selectedAnswer === currentQuestion.correctAnswer ? (
-                  <p className="text-green-600 font-semibold">Correct! 🎉</p>
+                  <div className="space-y-2">
+                    <p className="text-green-600 font-semibold text-lg">Correct! 🎉</p>
+                    {currentQuestionIndex < questions.length - 1 ? (
+                      <p className="text-sm text-muted-foreground">Moving to next question...</p>
+                    ) : (
+                      <p className="text-sm text-muted-foreground">Finishing quiz...</p>
+                    )}
+                  </div>
                 ) : (
-                  <p className="text-red-600 font-semibold">
-                    Incorrect. The correct answer is <code>{currentQuestion.correctAnswer}</code>
-                  </p>
+                  <div className="space-y-2">
+                    <p className="text-red-600 font-semibold text-lg">
+                      Incorrect. The correct answer is <code className="bg-green-100 px-2 py-1 rounded">{currentQuestion.correctAnswer}</code>
+                    </p>
+                    {currentQuestionIndex < questions.length - 1 ? (
+                      <p className="text-sm text-muted-foreground">Moving to next question...</p>
+                    ) : (
+                      <p className="text-sm text-muted-foreground">Finishing quiz...</p>
+                    )}
+                  </div>
                 )}
               </div>
             )}
