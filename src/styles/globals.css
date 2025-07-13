@@ -124,7 +124,7 @@
 
 
 .quiz-highlight {
-    @apply ring-3 ring-blue-900 relative z-10 rounded ring-offset-2;
+    @apply ring-2 ring-blue-900 relative z-10 rounded ring-offset-2;
     animation: quiz-shadow-fade 2s ease-in-out infinite;
 }
 @keyframes quiz-shadow-fade {
