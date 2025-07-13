@@ -124,18 +124,13 @@
 }
 
 
-.quiz-highlight {
-    @apply ring-2 ring-blue-900 relative z-10 rounded ring-offset-4;
-    animation: quiz-shadow-fade 2s ease-in-out infinite;
+
+.luna-dom-highlighter-fill {
+    pointer-events: none;
+    z-index: 0;
 }
-@keyframes quiz-shadow-fade {
-    0% {
-        box-shadow: 0 0 0 3px rgba(30, 58, 138, 0); /* ring-blue-900, min opacity */
-    }
-    50% {
-        box-shadow: 0 0 0 3px rgba(30, 58, 138, 1); /* ring-blue-900, visible */
-    }
-    100% {
-        box-shadow: 0 0 0 3px rgba(30, 58, 138, 0); /* min opacity */
-    }
+
+.luna-dom-highlighter {
+    pointer-events: auto !important;
+    z-index: 0;
 }

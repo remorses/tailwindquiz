@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { data } from 'react-router'
 import { Link, useNavigate, useSearchParams } from 'react-router'
 import { Card, CardContent, CardHeader, CardTitle } from 'website/src/components/ui/card'
@@ -9,6 +9,9 @@ import { href } from 'react-router'
 import { getElementClassesForCategory, isMetaCategory, type MetaCategoryKey } from 'website/src/lib/tailwind-class-categories'
 import type { Route } from './+types/quiz.$designId'
 import type { DefaultClassGroupIds } from '@xmorse/tailwind-merge'
+import { LunaDomHighlighter } from '../lib/highlighter.client'
+
+
 
 const quizDesigns = import.meta.glob('../quiz-designs/*.html', {
   query: '?raw',
@@ -53,7 +56,7 @@ function generatePlaceholderOptions(correctAnswer: string, category: DefaultClas
     'border-w': ['border', 'border-2', 'border-4', 'border-8'],
     'w': ['w-4', 'w-8', 'w-12', 'w-16'],
     'h': ['h-4', 'h-8', 'h-12', 'h-16'],
-    
+
     // Meta-categories
     'sizing': ['w-4', 'h-8', 'size-12', 'max-w-md', 'min-h-screen'],
     'spacing': ['p-4', 'm-2', 'mx-auto', 'py-8', 'pl-6'],
@@ -82,7 +85,7 @@ export default function QuizDesign({ loaderData }: Route.ComponentProps) {
 
   // Get current question index from URL params, default to 0
   const currentQuestionIndex = Math.max(0, parseInt(searchParams.get('q') || '0', 10))
-  
+
   // Helper function to update question index in URL
   const updateQuestionIndex = (newIndex: number) => {
     const newSearchParams = new URLSearchParams(searchParams)
@@ -93,13 +96,14 @@ export default function QuizDesign({ loaderData }: Route.ComponentProps) {
     }
     setSearchParams(newSearchParams, { replace: true })
   }
-  
+
   const [score, setScore] = useState(0)
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null)
   const [showResult, setShowResult] = useState(false)
   const [questions, setQuestions] = useState<QuizQuestion[]>([])
   const [quizComplete, setQuizComplete] = useState(false)
-  
+  const highlighterRef = useRef<LunaDomHighlighter | null>(null)
+
   // Validate and clamp question index based on available questions
   useEffect(() => {
     if (questions.length > 0 && currentQuestionIndex >= questions.length) {
@@ -107,7 +111,7 @@ export default function QuizDesign({ loaderData }: Route.ComponentProps) {
       updateQuestionIndex(questions.length - 1)
     }
   }, [questions.length, currentQuestionIndex])
-  
+
   // Reset question state when currentQuestionIndex changes (URL navigation)
   useEffect(() => {
     setSelectedAnswer(null)
@@ -128,7 +132,7 @@ export default function QuizDesign({ loaderData }: Route.ComponentProps) {
     Array.from(quizElements).forEach((element, index) => {
       const dataQuizValue = element.getAttribute('data-quiz') || ''
       const categories = dataQuizValue.split(',').map(cat => cat.trim()).filter(cat => cat.length > 0)
-      
+
       if (categories.length === 0) {
         console.log(`[Quiz Skip] Skipping element ${index + 1}: no data-quiz attribute`)
         return
@@ -190,18 +194,16 @@ export default function QuizDesign({ loaderData }: Route.ComponentProps) {
     setQuestions(extractedQuestions)
   }, [htmlContent])
 
-  // Highlight current quiz element
+  // Highlight current quiz element using luna-dom-highlighter
   useEffect(() => {
     if (questions.length === 0) return
 
     console.log(`[Quiz Debug] Attempting to highlight question ${currentQuestionIndex + 1}/${questions.length}`)
 
-    // Remove previous highlights
-    const highlightedElements = document.querySelectorAll('.quiz-highlight')
-    console.log(`[Quiz Debug] Removing ${highlightedElements.length} previous highlights`)
-    highlightedElements.forEach(el => {
-      el.classList.remove('quiz-highlight')
-    })
+    // Hide previous highlight
+    if (highlighterRef.current) {
+      highlighterRef.current.hide()
+    }
 
     // Find all quiz elements in the rendered HTML
     const allQuizElements = document.querySelectorAll('[data-quiz]')
@@ -237,8 +239,13 @@ export default function QuizDesign({ loaderData }: Route.ComponentProps) {
       textContent: currentElement.textContent?.slice(0, 50) + '...'
     })
 
-    // Add highlight to current element
-    currentElement.classList.add('quiz-highlight')
+    // Create highlighter if it doesn't exist
+    if (!highlighterRef.current) {
+      highlighterRef.current = new LunaDomHighlighter(document.body, {showAccessibilityInfo: false,  showInfo: false, showRulers: true, theme: '' })
+    }
+
+    // Highlight current element
+    highlighterRef.current.highlight(currentElement as HTMLElement, {})
 
     // Scroll element into view
     currentElement.scrollIntoView({
@@ -249,10 +256,9 @@ export default function QuizDesign({ loaderData }: Route.ComponentProps) {
     // Cleanup on unmount
     return () => {
       console.log('[Quiz Cleanup] Cleaning up highlights on unmount')
-      const highlightedElements = document.querySelectorAll('.quiz-highlight')
-      highlightedElements.forEach(el => {
-        el.classList.remove('quiz-highlight')
-      })
+      if (highlighterRef.current) {
+        highlighterRef.current.hide()
+      }
     }
   }, [currentQuestionIndex, questions])
 
@@ -347,9 +353,9 @@ export default function QuizDesign({ loaderData }: Route.ComponentProps) {
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-3">
               {currentQuestionIndex > 0 && (
-                <Button 
-                  variant="outline" 
-                  size="sm" 
+                <Button
+                  variant="outline"
+                  size="sm"
                   onClick={handlePreviousQuestion}
                   className="flex items-center gap-2"
                 >
@@ -380,13 +386,14 @@ export default function QuizDesign({ loaderData }: Route.ComponentProps) {
           </div>
         </div>
         <div
-          className="w-full bg-white min-h-96"
+        id='preview'
+          className="w-full  bg-white min-h-96"
           dangerouslySetInnerHTML={{ __html: htmlContent }}
         />
       </div>
 
       {/* Question Section */}
-      <div className="px-4 py-8">
+      <div className="px-4 z-50 py-8">
         <div className="max-w-4xl mx-auto">
 
         {/* Question */}

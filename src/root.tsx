@@ -1,4 +1,6 @@
 import "website/src/styles/globals.css";
+import 'luna-dom-highlighter/luna-dom-highlighter.css';
+
 import {
   isRouteErrorResponse,
   Links,
