@@ -20,7 +20,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
+
         {children}
+        <div id='overlay' />
         <ScrollRestoration />
         <Scripts />
       </body>

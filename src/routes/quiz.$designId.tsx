@@ -240,9 +240,10 @@ export default function QuizDesign({ loaderData }: Route.ComponentProps) {
       textContent: currentElement.textContent?.slice(0, 50) + '...'
     })
 
+
     // Create highlighter if it doesn't exist
     if (!highlighterRef.current) {
-      highlighterRef.current = new LunaDomHighlighter(document.body, {showAccessibilityInfo: false,  showInfo: false, showRulers: true, theme: '' })
+      highlighterRef.current = new LunaDomHighlighter(document.getElementById('overlay')!, {showAccessibilityInfo: false,  showInfo: false, showRulers: true, theme: '' })
     }
 
     // Highlight current element only if highlighter is enabled

@@ -125,12 +125,13 @@
 
 
 
-.luna-dom-highlighter-fill {
+/* .luna-dom-highlighter-fill {
     pointer-events: none;
     z-index: 0;
-}
-
+} */
+/*
 .luna-dom-highlighter {
+    position: relative !important;
     pointer-events: auto !important;
     z-index: 0;
-}
+} */
