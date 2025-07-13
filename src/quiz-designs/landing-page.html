@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page Design</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <div class="w-8 h-8 bg-indigo-600 rounded-lg mr-3"></div>
+                    <h1 class="text-xl font-bold text-gray-900">TechCorp</h1>
+                </div>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#" class="text-gray-600 hover:text-gray-900">Products</a>
+                    <a href="#" class="text-gray-600 hover:text-gray-900">Solutions</a>
+                    <a href="#" class="text-gray-600 hover:text-gray-900">Pricing</a>
+                    <a href="#" class="text-gray-600 hover:text-gray-900">Contact</a>
+                </nav>
+                <button class="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700">
+                    Sign In
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6" data-quiz="font-size">
+                    Build Amazing Products
+                </h1>
+                <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto" data-quiz="mx">
+                    Transform your ideas into reality with our cutting-edge platform. 
+                    Join thousands of developers who trust us to deliver exceptional results.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button class="bg-indigo-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-indigo-700 transition duration-200">
+                        Get Started Free
+                    </button>
+                    <button class="border border-gray-300 text-gray-700 px-8 py-3 rounded-lg text-lg font-semibold hover:bg-gray-50" data-quiz="border-w">
+                        Watch Demo
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Grid -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">
+                    Everything you need to succeed
+                </h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Our comprehensive platform provides all the tools and features you need to build, deploy, and scale your applications.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8" data-quiz="gap">
+                <div class="text-center p-6">
+                    <div class="w-12 h-12 bg-indigo-100 rounded-lg mx-auto mb-4 flex items-center justify-center">
+                        <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Lightning Fast</h3>
+                    <p class="text-gray-600">
+                        Deploy your applications in seconds with our optimized infrastructure
+                    </p>
+                </div>
+                
+                <div class="text-center p-6">
+                    <div class="w-12 h-12 bg-green-100 rounded-lg mx-auto mb-4 flex items-center justify-center">
+                        <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Secure by Default</h3>
+                    <p class="text-gray-600">
+                        Enterprise-grade security built into every layer of our platform
+                    </p>
+                </div>
+                
+                <div class="text-center p-6">
+                    <div class="w-12 h-12 bg-purple-100 rounded-lg mx-auto mb-4 flex items-center justify-center">
+                        <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Real-time Analytics</h3>
+                    <p class="text-gray-600">
+                        Monitor your applications with detailed insights and metrics
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 bg-indigo-600">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="text-4xl font-bold text-white mb-2">10M+</div>
+                    <div class="text-indigo-200">Active Users</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold text-white mb-2">99.9%</div>
+                    <div class="text-indigo-200">Uptime</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold text-white mb-2">150+</div>
+                    <div class="text-indigo-200">Countries</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold text-white mb-2">24/7</div>
+                    <div class="text-indigo-200">Support</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20">
+        <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">
+                Ready to get started?
+            </h2>
+            <p class="text-xl text-gray-600 mb-8">
+                Join thousands of developers building the future with our platform
+            </p>
+            <div class="bg-white p-8 rounded-2xl shadow-xl border" data-quiz="shadow">
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <input 
+                        type="email" 
+                        placeholder="Enter your email" 
+                        class="px-4 py-3 border border-gray-300 rounded-lg flex-1 max-w-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    />
+                    <button class="bg-indigo-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-indigo-700 whitespace-nowrap">
+                        Start Free Trial
+                    </button>
+                </div>
+                <p class="text-sm text-gray-500 mt-4">
+                    No credit card required. 14-day free trial.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12" data-quiz="py">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-8 h-8 bg-indigo-600 rounded-lg mr-3"></div>
+                        <h3 class="text-xl font-bold">TechCorp</h3>
+                    </div>
+                    <p class="text-gray-400">
+                        Building the future of development platforms, one feature at a time.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Product</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Features</a></li>
+                        <li><a href="#" class="hover:text-white">Pricing</a></li>
+                        <li><a href="#" class="hover:text-white">API</a></li>
+                        <li><a href="#" class="hover:text-white">Documentation</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">About</a></li>
+                        <li><a href="#" class="hover:text-white">Blog</a></li>
+                        <li><a href="#" class="hover:text-white">Careers</a></li>
+                        <li><a href="#" class="hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Help Center</a></li>
+                        <li><a href="#" class="hover:text-white">Community</a></li>
+                        <li><a href="#" class="hover:text-white">Status</a></li>
+                        <li><a href="#" class="hover:text-white">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 TechCorp. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

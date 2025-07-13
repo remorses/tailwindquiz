@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "build": "doppler run --preserve-env -- react-router build",
-    "dev": "doppler run -- react-router dev",
+    "dev": "pnpm react-router dev",
     "start": "doppler run -- node ./build/server/index.js",
     "typecheck": "react-router typegen && tsc"
   },
@@ -12,6 +12,7 @@
     "./*": "./*"
   },
   "dependencies": {
+    "@radix-ui/react-progress": "^1.1.7",
     "@radix-ui/react-slot": "^1.2.3",
     "@react-router/fs-routes": "^7.6.2",
     "@react-router/node": "^7.6.2",
