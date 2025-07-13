@@ -109,7 +109,7 @@ export default function QuizResults({ loaderData }: Route.ComponentProps) {
                   No quiz results yet. Take your first quiz to see your progress!
                 </p>
                 <Button asChild>
-                  <Link to={href('/quiz')}>Start Quiz</Link>
+                  <Link to={href('/')}>Start Quiz</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -158,7 +158,7 @@ export default function QuizResults({ loaderData }: Route.ComponentProps) {
         {/* Actions */}
         <div className="mt-8 flex gap-4 justify-center">
           <Button asChild>
-            <Link to={href('/quiz')}>Take Another Quiz</Link>
+            <Link to={href('/')}>Take Another Quiz</Link>
           </Button>
           <Button variant="outline" asChild>
             <Link to={href('/')}>Back to Home</Link>

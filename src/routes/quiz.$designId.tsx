@@ -354,7 +354,7 @@ export default function QuizDesign({ loaderData }: Route.ComponentProps) {
               <div className="flex gap-4 justify-center">
                 <Button onClick={handleRestart}>Try Again</Button>
                 <Button variant="outline" asChild>
-                  <Link to={href('/quiz')}>Back to Quiz List</Link>
+                  <Link to={href('/')}>Back to Quiz List</Link>
                 </Button>
               </div>
             </CardContent>
