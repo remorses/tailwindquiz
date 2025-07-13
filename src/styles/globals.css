@@ -122,6 +122,19 @@
     }
 }
 
+
 .quiz-highlight {
     @apply ring-3 ring-blue-900 relative z-10 rounded ring-offset-2;
+    animation: quiz-shadow-fade 2s ease-in-out infinite;
+}
+@keyframes quiz-shadow-fade {
+    0% {
+        box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.4); /* ring-blue-900, min opacity */
+    }
+    50% {
+        box-shadow: 0 0 0 3px rgba(30, 58, 138, 1); /* ring-blue-900, visible */
+    }
+    100% {
+        box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.4); /* min opacity */
+    }
 }
