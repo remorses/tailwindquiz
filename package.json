@@ -3,8 +3,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "doppler run --preserve-env -- react-router build",
+    "build": "react-router build",
     "dev": "pnpm react-router dev",
+    "deployment": "pnpm build && pnpm wrangler deploy",
     "start": "doppler run -- node ./build/server/index.js",
     "typecheck": "react-router typegen && tsc"
   },
@@ -12,10 +13,11 @@
     "./*": "./*"
   },
   "dependencies": {
+    "@cloudflare/vite-plugin": "^1.9.4",
     "@radix-ui/react-progress": "^1.1.7",
     "@radix-ui/react-slot": "^1.2.3",
-    "@react-router/fs-routes": "^7.6.2",
-    "@react-router/node": "^7.6.2",
+    "@react-router/fs-routes": "^7.6.3",
+    "@react-router/node": "^7.6.3",
     "@sentry/node": "^9.27.0",
     "@xmorse/tailwind-merge": "^3.3.1",
     "class-variance-authority": "^0.7.1",
@@ -25,14 +27,14 @@
     "luna-dom-highlighter": "^1.0.2",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "react-router": "^7.6.2",
+    "react-router": "^7.6.3",
     "react-router-hono-server": "^2.13.0",
     "sentries": "^0.2.2",
     "tailwind-merge": "^3.3.0",
     "tw-animate-css": "^1.3.4"
   },
   "devDependencies": {
-    "@react-router/dev": "^7.6.2",
+    "@react-router/dev": "^7.6.3",
     "@tailwindcss/typography": "^0.5.16",
     "@tailwindcss/vite": "^4.1.8",
     "@types/node": "^22.15.30",
@@ -46,6 +48,7 @@
     "vite": "^6.3.5",
     "vite-plugin-environment": "^1.1.3",
     "vite-tsconfig-paths": "^5.1.4",
-    "vitest": "^3.2.2"
+    "vitest": "^3.2.2",
+    "wrangler": "^4.24.3"
   }
 }

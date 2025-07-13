@@ -1,0 +1,13 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "tailwindquiz-website-worker",
+  "assets": {
+    "directory": "build/client",
+    "binding": "ASSETS",
+  },
+  "compatibility_date": "2025-03-17",
+  "routes": [
+    { "pattern": "tailwindquiz.com", "custom_domain": true }
+  ],
+  "main": "./workers/worker.ts",
+}

@@ -1,7 +1,8 @@
-import type { Config } from '@react-router/dev/config'
+import type { Config } from "@react-router/dev/config";
 
 export default {
-    serverBuildFile: 'assets/server-build.js',
-    appDirectory: 'src',
-    prerender: ['/', '/defer-example'],
-} satisfies Config
+  future: {
+    unstable_viteEnvironmentApi: true,
+  },
+  appDirectory: "src",
+} satisfies Config;

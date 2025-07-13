@@ -6,6 +6,7 @@ import { reactRouterHonoServer } from "react-router-hono-server/dev";
 import { viteExternalsPlugin } from "@xmorse/deployment-utils/dist/vite-externals-plugin";
 import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
+import { cloudflare } from "@cloudflare/vite-plugin";
 
 const NODE_ENV = JSON.stringify(process.env.NODE_ENV || "production");
 
@@ -24,20 +25,21 @@ export default defineConfig({
     },
   },
   plugins: [
+    cloudflare({ viteEnvironment: { name: "ssr" } }),
     EnvironmentPlugin("all", { prefix: "PUBLIC" }),
     EnvironmentPlugin("all", { prefix: "NEXT_PUBLIC" }),
-    reactRouterHonoServer(),
+
     reactRouter(),
     tsconfigPaths(),
-    viteExternalsPlugin({ externals: [] }),
+    // viteExternalsPlugin({ externals: [] }),
     tailwindcss(),
   ],
-  build: {
-    commonjsOptions: {
-      transformMixedEsModules: true,
-    },
-  },
-  legacy: {
-    proxySsrExternalModules: true,
-  },
+  // build: {
+  //   commonjsOptions: {
+  //     transformMixedEsModules: true,
+  //   },
+  // },
+  // legacy: {
+  //   proxySsrExternalModules: true,
+  // },
 });
