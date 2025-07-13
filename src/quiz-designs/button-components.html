@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Components with Meta-Categories</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 py-12">
+    <div class="max-w-4xl mx-auto px-4">
+        <h1 class="text-3xl font-bold text-center mb-8">Button Components</h1>
+        
+        <!-- Primary Buttons -->
+        <div class="mb-8">
+            <h2 class="text-xl font-semibold mb-4">Primary Buttons</h2>
+            <div class="flex flex-wrap gap-4">
+                <button class="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors" data-quiz="spacing,background">
+                    Get Started
+                </button>
+                <button class="bg-green-500 text-white px-4 py-2 rounded-md text-sm font-semibold shadow-md hover:shadow-lg" data-quiz="sizing,effects">
+                    Save Changes
+                </button>
+                <button class="bg-red-500 text-white px-8 py-4 rounded-xl text-lg font-bold transform hover:scale-105" data-quiz="typography,transforms">
+                    Delete Account
+                </button>
+            </div>
+        </div>
+
+        <!-- Secondary Buttons -->
+        <div class="mb-8">
+            <h2 class="text-xl font-semibold mb-4">Secondary Buttons</h2>
+            <div class="flex flex-wrap gap-4">
+                <button class="border-2 border-gray-300 text-gray-700 px-4 py-2 rounded-md hover:border-gray-400" data-quiz="border,spacing">
+                    Cancel
+                </button>
+                <button class="border border-blue-500 text-blue-500 px-6 py-3 rounded-lg font-medium hover:bg-blue-50" data-quiz="border,background">
+                    Learn More
+                </button>
+                <button class="bg-gray-100 text-gray-900 px-5 py-2.5 rounded-full text-sm font-medium" data-quiz="background,border-radius">
+                    Filter
+                </button>
+            </div>
+        </div>
+
+        <!-- Icon Buttons -->
+        <div class="mb-8">
+            <h2 class="text-xl font-semibold mb-4">Icon Buttons</h2>
+            <div class="flex flex-wrap gap-4">
+                <button class="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center hover:bg-blue-700" data-quiz="sizing,flexbox">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                    </svg>
+                </button>
+                <button class="w-12 h-12 bg-gray-200 text-gray-700 rounded-lg flex items-center justify-center shadow-sm hover:shadow-md" data-quiz="sizing,effects">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                    </svg>
+                </button>
+                <button class="p-3 bg-white text-gray-600 rounded-md border border-gray-200 hover:border-gray-300" data-quiz="spacing,border">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Button Groups -->
+        <div class="mb-8">
+            <h2 class="text-xl font-semibold mb-4">Button Groups</h2>
+            <div class="inline-flex rounded-md shadow-sm" data-quiz="border-radius,effects">
+                <button class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-l-lg hover:bg-gray-50">
+                    Years
+                </button>
+                <button class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border-t border-b border-gray-200 hover:bg-gray-50">
+                    Months
+                </button>
+                <button class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-r-lg hover:bg-gray-50">
+                    Days
+                </button>
+            </div>
+        </div>
+
+        <!-- Loading States -->
+        <div class="mb-8">
+            <h2 class="text-xl font-semibold mb-4">Loading States</h2>
+            <div class="flex flex-wrap gap-4">
+                <button class="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium opacity-50 cursor-not-allowed" data-quiz="effects,layout">
+                    <span class="flex items-center">
+                        <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        Processing...
+                    </span>
+                </button>
+                <button class="bg-gray-300 text-gray-500 px-4 py-2 rounded-md cursor-not-allowed" data-quiz="background,layout">
+                    Disabled Button
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

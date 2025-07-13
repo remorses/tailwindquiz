@@ -6,7 +6,7 @@ import { Button } from 'website/src/components/ui/button'
 import { Progress } from 'website/src/components/ui/progress'
 import { Badge } from 'website/src/components/ui/badge'
 import { href } from 'react-router'
-import { getElementClassesForCategory } from 'website/src/lib/tailwind-class-categories'
+import { getElementClassesForCategory, isMetaCategory, type MetaCategoryKey } from 'website/src/lib/tailwind-class-categories'
 import type { Route } from './+types/quiz.$designId'
 import type { DefaultClassGroupIds } from '@xmorse/tailwind-merge'
 
@@ -17,7 +17,7 @@ const quizDesigns = import.meta.glob('../quiz-designs/*.html', {
 
 interface QuizQuestion {
   element: string
-  category: DefaultClassGroupIds
+  category: DefaultClassGroupIds | MetaCategoryKey
   correctAnswer: string
   options: string[]
   elementIndex: number
@@ -38,8 +38,9 @@ export async function loader({ params }: Route.LoaderArgs) {
 }
 
 // Generate placeholder options for now (will be replaced with AI generation later)
-function generatePlaceholderOptions(correctAnswer: string, category: DefaultClassGroupIds): string[] {
+function generatePlaceholderOptions(correctAnswer: string, category: DefaultClassGroupIds | MetaCategoryKey): string[] {
   const placeholders = {
+    // Individual categories
     'font-family': ['font-sans', 'font-serif', 'font-mono'],
     'font-size': ['text-sm', 'text-base', 'text-lg', 'text-xl'],
     'bg-color': ['bg-red-500', 'bg-blue-500', 'bg-green-500', 'bg-yellow-500'],
@@ -50,6 +51,22 @@ function generatePlaceholderOptions(correctAnswer: string, category: DefaultClas
     'gap': ['gap-2', 'gap-4', 'gap-6', 'gap-8'],
     'm': ['m-2', 'm-4', 'm-6', 'm-8'],
     'border-w': ['border', 'border-2', 'border-4', 'border-8'],
+    'w': ['w-4', 'w-8', 'w-12', 'w-16'],
+    'h': ['h-4', 'h-8', 'h-12', 'h-16'],
+    
+    // Meta-categories
+    'sizing': ['w-4', 'h-8', 'size-12', 'max-w-md', 'min-h-screen'],
+    'spacing': ['p-4', 'm-2', 'mx-auto', 'py-8', 'pl-6'],
+    'positioning': ['absolute', 'relative', 'top-0', 'left-4', 'z-10'],
+    'flexbox': ['flex', 'flex-col', 'justify-center', 'items-center', 'grow'],
+    'grid': ['grid', 'grid-cols-3', 'gap-4', 'col-span-2', 'row-start-1'],
+    'typography': ['font-bold', 'text-lg', 'text-center', 'leading-6', 'tracking-wide'],
+    'background': ['bg-blue-500', 'bg-gradient-to-r', 'bg-cover', 'bg-center'],
+    'border': ['border', 'border-2', 'border-gray-300', 'border-t', 'border-solid'],
+    'border-radius': ['rounded', 'rounded-md', 'rounded-lg', 'rounded-full', 'rounded-t'],
+    'effects': ['shadow-lg', 'opacity-50', 'blur-sm', 'brightness-110', 'contrast-125'],
+    'transforms': ['scale-105', 'rotate-45', 'translate-x-2', 'skew-y-3', 'transform'],
+    'layout': ['block', 'flex', 'grid', 'hidden', 'overflow-hidden']
   }
 
   const categoryOptions = placeholders[category as keyof typeof placeholders] || ['placeholder-1', 'placeholder-2', 'placeholder-3', 'placeholder-4']
@@ -120,7 +137,9 @@ export default function QuizDesign({ loaderData }: Route.ComponentProps) {
       let hasValidQuestions = false
 
       categories.forEach((category) => {
-        const relevantClasses = getElementClassesForCategory(element, category as DefaultClassGroupIds)
+        // Check if category is a meta-category or regular category
+        const typedCategory = category as DefaultClassGroupIds | MetaCategoryKey
+        const relevantClasses = getElementClassesForCategory(element, typedCategory)
 
         if (relevantClasses.length === 0) {
           // Skip this category - no relevant classes found
@@ -139,9 +158,9 @@ export default function QuizDesign({ loaderData }: Route.ComponentProps) {
 
         extractedQuestions.push({
           element: element.outerHTML,
-          category: category as DefaultClassGroupIds,
+          category: typedCategory,
           correctAnswer,
-          options: generatePlaceholderOptions(correctAnswer, category as DefaultClassGroupIds),
+          options: generatePlaceholderOptions(correctAnswer, typedCategory),
           elementIndex: index,
           originalCategories: categories
         })
