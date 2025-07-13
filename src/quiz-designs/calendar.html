@@ -1,0 +1,2663 @@
+<main
+    data-slot="sidebar-inset"
+    class="bg-background relative flex w-full flex-1 flex-col lg:peer-data-[variant=inset]:m-2 lg:peer-data-[variant=inset]:rounded-2xl lg:peer-data-[variant=inset]:shadow-sm lg:peer-data-[variant=inset]:peer-data-[state=collapsed]:ml-2"
+>
+    <div class="flex flex-1 flex-col gap-4 p-2 pt-0">
+        <div
+            class="flex has-data-[slot=month-view]:flex-1 flex-col rounded-lg"
+            style="
+                --event-height: 24px;
+                --event-gap: 4px;
+                --week-cells-height: 72px;
+            "
+        >
+            <div
+                class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 py-5 sm:px-4"
+            >
+                <div
+                    class="flex sm:flex-col max-sm:items-center justify-between gap-1.5"
+                >
+                    <div class="flex items-center gap-1.5">
+                        <button
+                            data-slot="sidebar-trigger"
+                            data-quiz="width"
+                            class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent dark:hover:bg-accent/50 peer size-7 text-muted-foreground/80 hover:text-foreground/80 hover:bg-transparent! sm:-ms-1.5 lg:data-[state=invisible]:opacity-0 lg:data-[state=invisible]:pointer-events-none transition-opacity ease-in-out duration-200"
+                            data-sidebar="trigger"
+                            data-state="invisible"
+                        >
+                            <svg
+                                viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="20"
+                                height="20"
+                                fill="currentColor"
+                                class="remixicon size-5"
+                            >
+                                <path
+                                    d="M21 3C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H21ZM20 5H4V19H20V5ZM8 7V17H6V7H8Z"
+                                ></path></svg
+                            ><span class="sr-only">Collapse sidebar</span>
+                        </button>
+                        <h2
+                            class="font-semibold text-xl lg:peer-data-[state=invisible]:-translate-x-7.5 transition-transform ease-in-out duration-300"
+                        >
+                            July 2025
+                        </h2>
+                    </div>
+                    <div class="flex -space-x-[0.45rem]">
+                        <img
+                            data-quiz="width"
+                            data-quiz="size"
+                            class="ring-background rounded-full ring-1"
+                            width="24"
+                            height="24"
+                            alt="Avatar 01"
+                            src="https://raw.githubusercontent.com/origin-space/origin-images/refs/heads/main/exp1/avatar-40-16_zn3ygb.jpg"
+                        /><img
+                            class="ring-background rounded-full ring-1"
+                            width="24"
+                            height="24"
+                            alt="Avatar 02"
+                            src="https://raw.githubusercontent.com/origin-space/origin-images/refs/heads/main/exp1/avatar-40-10_qyybkj.jpg"
+                        /><img
+                            class="ring-background rounded-full ring-1"
+                            width="24"
+                            height="24"
+                            alt="Avatar 03"
+                            src="https://raw.githubusercontent.com/origin-space/origin-images/refs/heads/main/exp1/avatar-40-15_fguzbs.jpg"
+                        /><img
+                            class="ring-background rounded-full ring-1"
+                            width="24"
+                            height="24"
+                            alt="Avatar 04"
+                            src="https://raw.githubusercontent.com/origin-space/origin-images/refs/heads/main/exp1/avatar-40-11_jtjhsp.jpg"
+                        /><button
+                            data-slot="button"
+                            class="gap-2 whitespace-nowrap font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border bg-background hover:bg-accent hover:text-accent-foreground flex size-6 items-center justify-center rounded-full text-xs ring-1 ring-background border-transparent shadow-none text-muted-foreground/80 dark:bg-background dark:hover:bg-background dark:border-transparent"
+                        >
+                            <svg
+                                viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                fill="currentColor"
+                                class="remixicon size-4"
+                            >
+                                <path
+                                    d="M5 10C3.9 10 3 10.9 3 12C3 13.1 3.9 14 5 14C6.1 14 7 13.1 7 12C7 10.9 6.1 10 5 10ZM19 10C17.9 10 17 10.9 17 12C17 13.1 17.9 14 19 14C20.1 14 21 13.1 21 12C21 10.9 20.1 10 19 10ZM12 10C10.9 10 10 10.9 10 12C10 13.1 10.9 14 12 14C13.1 14 14 13.1 14 12C14 10.9 13.1 10 12 10Z"
+                                ></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="flex items-center justify-between gap-2">
+                    <div class="flex items-center justify-between gap-2">
+                        <div class="flex items-center sm:gap-2 max-sm:order-1">
+                            <button
+                                data-slot="button"
+                                class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 size-9 max-sm:size-8"
+                                aria-label="Previous"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="16"
+                                    height="16"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="lucide lucide-chevron-left"
+                                    aria-hidden="true"
+                                >
+                                    <path d="m15 18-6-6 6-6"></path>
+                                </svg></button
+                            ><button
+                                data-slot="button"
+                                class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 size-9 max-sm:size-8"
+                                aria-label="Next"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="16"
+                                    height="16"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="lucide lucide-chevron-right"
+                                    aria-hidden="true"
+                                >
+                                    <path d="m9 18 6-6-6-6"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <button
+                            data-slot="button"
+                            class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-primary text-primary-foreground shadow-xs hover:bg-primary/90 h-9 px-4 py-2 has-[&gt;svg]:px-3 max-sm:h-8 max-sm:px-2.5!"
+                        >
+                            Today
+                        </button>
+                    </div>
+                    <div class="flex items-center justify-between gap-2">
+                        <button
+                            data-slot="button"
+                            class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 h-9 px-4 py-2 has-[&gt;svg]:px-3 max-sm:h-8 max-sm:px-2.5!"
+                        >
+                            New Event</button
+                        ><button
+                            data-slot="dropdown-menu-trigger"
+                            class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 h-9 px-4 py-2 has-[&gt;svg]:px-3 gap-1.5 max-sm:h-8 max-sm:px-2! max-sm:gap-1"
+                            type="button"
+                            id="radix-«r3»"
+                            aria-haspopup="menu"
+                            aria-expanded="false"
+                            data-state="closed"
+                        >
+                            <span class="capitalize">week</span
+                            ><svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="lucide lucide-chevron-down -me-1 opacity-60"
+                                aria-hidden="true"
+                            >
+                                <path d="m6 9 6 6 6-6"></path>
+                            </svg>
+                        </button>
+                        <div class="flex flex-col justify-center">
+                            <input
+                                id="«r5»"
+                                class="peer sr-only"
+                                aria-label="Toggle dark mode"
+                                type="checkbox"
+                                name="theme-toggle"
+                            /><label
+                                class="text-muted-foreground/80 hover:text-foreground/80 rounded peer-focus-visible:border-ring peer-focus-visible:ring-ring/50 relative inline-flex size-8 cursor-pointer items-center justify-center transition-[color,box-shadow] outline-none peer-focus-visible:ring-[3px]"
+                                for="«r5»"
+                                aria-hidden="true"
+                                ><svg
+                                    viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="20"
+                                    height="20"
+                                    fill="currentColor"
+                                    aria-hidden="true"
+                                    class="remixicon dark:hidden"
+                                >
+                                    <path
+                                        d="M12 18C8.68629 18 6 15.3137 6 12C6 8.68629 8.68629 6 12 6C15.3137 6 18 8.68629 18 12C18 15.3137 15.3137 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16ZM11 1H13V4H11V1ZM11 20H13V23H11V20ZM3.51472 4.92893L4.92893 3.51472L7.05025 5.63604L5.63604 7.05025L3.51472 4.92893ZM16.9497 18.364L18.364 16.9497L20.4853 19.0711L19.0711 20.4853L16.9497 18.364ZM19.0711 3.51472L20.4853 4.92893L18.364 7.05025L16.9497 5.63604L19.0711 3.51472ZM5.63604 16.9497L7.05025 18.364L4.92893 20.4853L3.51472 19.0711L5.63604 16.9497ZM23 11V13H20V11H23ZM4 11V13H1V11H4Z"
+                                    ></path></svg
+                                ><svg
+                                    viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="20"
+                                    height="20"
+                                    fill="currentColor"
+                                    aria-hidden="true"
+                                    class="remixicon hidden dark:block"
+                                >
+                                    <path
+                                        d="M10 6C10 10.4183 13.5817 14 18 14C19.4386 14 20.7885 13.6203 21.9549 12.9556C21.4738 18.0302 17.2005 22 12 22C6.47715 22 2 17.5228 2 12C2 6.79948 5.9698 2.52616 11.0444 2.04507C10.3797 3.21152 10 4.56142 10 6ZM4 12C4 16.4183 7.58172 20 12 20C14.9654 20 17.5757 18.3788 18.9571 15.9546C18.6407 15.9848 18.3214 16 18 16C12.4772 16 8 11.5228 8 6C8 5.67863 8.01524 5.35933 8.04536 5.04293C5.62119 6.42426 4 9.03458 4 12ZM18.1642 2.29104L19 2.5V3.5L18.1642 3.70896C17.4476 3.8881 16.8881 4.4476 16.709 5.16417L16.5 6H15.5L15.291 5.16417C15.1119 4.4476 14.5524 3.8881 13.8358 3.70896L13 3.5V2.5L13.8358 2.29104C14.5524 2.1119 15.1119 1.5524 15.291 0.835829L15.5 0H16.5L16.709 0.835829C16.8881 1.5524 17.4476 2.1119 18.1642 2.29104ZM23.1642 7.29104L24 7.5V8.5L23.1642 8.70896C22.4476 8.8881 21.8881 9.4476 21.709 10.1642L21.5 11H20.5L20.291 10.1642C20.1119 9.4476 19.5524 8.8881 18.8358 8.70896L18 8.5V7.5L18.8358 7.29104C19.5524 7.1119 20.1119 6.5524 20.291 5.83583L20.5 5H21.5L21.709 5.83583C21.8881 6.5524 22.4476 7.1119 23.1642 7.29104Z"
+                                    ></path></svg
+                                ><span class="sr-only"
+                                    >Switch to system/light/dark version</span
+                                ></label
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-1 flex-col">
+                <div data-slot="week-view" class="flex h-full flex-col">
+                    <div
+                        class="bg-background/80 border-border/70 sticky top-0 z-30 grid grid-cols-8 border-y backdrop-blur-md uppercase"
+                    >
+                        <div
+                            class="text-muted-foreground/70 py-2 text-center text-xs"
+                        >
+                            <span class="max-[479px]:sr-only">GMT+2</span>
+                        </div>
+                        <div
+                            class="data-today:text-foreground text-muted-foreground/70 py-2 text-center text-xs data-today:font-medium"
+                            data-today="true"
+                        >
+                            <span class="sm:hidden" aria-hidden="true"
+                                >S 13</span
+                            ><span class="max-sm:hidden">Sun 13</span>
+                        </div>
+                        <div
+                            class="data-today:text-foreground text-muted-foreground/70 py-2 text-center text-xs data-today:font-medium"
+                        >
+                            <span class="sm:hidden" aria-hidden="true"
+                                >M 14</span
+                            ><span class="max-sm:hidden">Mon 14</span>
+                        </div>
+                        <div
+                            class="data-today:text-foreground text-muted-foreground/70 py-2 text-center text-xs data-today:font-medium"
+                        >
+                            <span class="sm:hidden" aria-hidden="true"
+                                >T 15</span
+                            ><span class="max-sm:hidden">Tue 15</span>
+                        </div>
+                        <div
+                            class="data-today:text-foreground text-muted-foreground/70 py-2 text-center text-xs data-today:font-medium"
+                        >
+                            <span class="sm:hidden" aria-hidden="true"
+                                >W 16</span
+                            ><span class="max-sm:hidden">Wed 16</span>
+                        </div>
+                        <div
+                            class="data-today:text-foreground text-muted-foreground/70 py-2 text-center text-xs data-today:font-medium"
+                        >
+                            <span class="sm:hidden" aria-hidden="true"
+                                >T 17</span
+                            ><span class="max-sm:hidden">Thu 17</span>
+                        </div>
+                        <div
+                            class="data-today:text-foreground text-muted-foreground/70 py-2 text-center text-xs data-today:font-medium"
+                        >
+                            <span class="sm:hidden" aria-hidden="true"
+                                >F 18</span
+                            ><span class="max-sm:hidden">Fri 18</span>
+                        </div>
+                        <div
+                            class="data-today:text-foreground text-muted-foreground/70 py-2 text-center text-xs data-today:font-medium"
+                        >
+                            <span class="sm:hidden" aria-hidden="true"
+                                >S 19</span
+                            ><span class="max-sm:hidden">Sat 19</span>
+                        </div>
+                    </div>
+                    <div class="border-border/70 bg-muted/50 border-b">
+                        <div class="grid grid-cols-8">
+                            <div class="border-border/70 relative border-r">
+                                <span
+                                    class="text-muted-foreground/70 absolute bottom-0 left-0 h-6 w-16 max-w-full pe-2 text-right text-[10px] sm:pe-4 sm:text-xs"
+                                    >All day</span
+                                >
+                            </div>
+                            <div
+                                class="border-border/70 relative border-r p-1 last:border-r-0"
+                                data-today="true"
+                            ></div>
+                            <div
+                                class="border-border/70 relative border-r p-1 last:border-r-0"
+                            ></div>
+                            <div
+                                class="border-border/70 relative border-r p-1 last:border-r-0"
+                            ></div>
+                            <div
+                                class="border-border/70 relative border-r p-1 last:border-r-0"
+                            >
+                                <button
+                                    class="focus-visible:border-ring focus-visible:ring-ring/50 flex w-full overflow-hidden px-1 text-left font-medium backdrop-blur-md transition outline-none select-none focus-visible:ring-[3px] data-dragging:cursor-grabbing data-dragging:shadow-lg data-past-event:line-through sm:px-2 bg-emerald-200/50 hover:bg-emerald-200/40 text-emerald-900/90 dark:bg-emerald-400/25 dark:hover:bg-emerald-400/20 dark:text-emerald-200 shadow-emerald-700/8 rounded mt-[var(--event-gap)] h-[var(--event-height)] items-center text-[10px] sm:text-[13px]"
+                                >
+                                    <div class="truncate" aria-hidden="false">
+                                        Team Building
+                                    </div>
+                                </button>
+                            </div>
+                            <div
+                                class="border-border/70 relative border-r p-1 last:border-r-0"
+                            ></div>
+                            <div
+                                class="border-border/70 relative border-r p-1 last:border-r-0"
+                            ></div>
+                            <div
+                                class="border-border/70 relative border-r p-1 last:border-r-0"
+                            ></div>
+                        </div>
+                    </div>
+                    <div class="grid flex-1 grid-cols-8 overflow-hidden">
+                        <div
+                            class="border-border/70 border-r grid auto-cols-fr"
+                        >
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            ></div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <span
+                                    class="bg-background text-muted-foreground/70 absolute -top-3 left-0 flex h-6 w-16 max-w-full items-center justify-end pe-2 text-[10px] sm:pe-4 sm:text-xs"
+                                    >8 AM</span
+                                >
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <span
+                                    class="bg-background text-muted-foreground/70 absolute -top-3 left-0 flex h-6 w-16 max-w-full items-center justify-end pe-2 text-[10px] sm:pe-4 sm:text-xs"
+                                    >9 AM</span
+                                >
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <span
+                                    class="bg-background text-muted-foreground/70 absolute -top-3 left-0 flex h-6 w-16 max-w-full items-center justify-end pe-2 text-[10px] sm:pe-4 sm:text-xs"
+                                    >10 AM</span
+                                >
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <span
+                                    class="bg-background text-muted-foreground/70 absolute -top-3 left-0 flex h-6 w-16 max-w-full items-center justify-end pe-2 text-[10px] sm:pe-4 sm:text-xs"
+                                    >11 AM</span
+                                >
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <span
+                                    class="bg-background text-muted-foreground/70 absolute -top-3 left-0 flex h-6 w-16 max-w-full items-center justify-end pe-2 text-[10px] sm:pe-4 sm:text-xs"
+                                    >12 PM</span
+                                >
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <span
+                                    class="bg-background text-muted-foreground/70 absolute -top-3 left-0 flex h-6 w-16 max-w-full items-center justify-end pe-2 text-[10px] sm:pe-4 sm:text-xs"
+                                    >1 PM</span
+                                >
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <span
+                                    class="bg-background text-muted-foreground/70 absolute -top-3 left-0 flex h-6 w-16 max-w-full items-center justify-end pe-2 text-[10px] sm:pe-4 sm:text-xs"
+                                    >2 PM</span
+                                >
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <span
+                                    class="bg-background text-muted-foreground/70 absolute -top-3 left-0 flex h-6 w-16 max-w-full items-center justify-end pe-2 text-[10px] sm:pe-4 sm:text-xs"
+                                    >3 PM</span
+                                >
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <span
+                                    class="bg-background text-muted-foreground/70 absolute -top-3 left-0 flex h-6 w-16 max-w-full items-center justify-end pe-2 text-[10px] sm:pe-4 sm:text-xs"
+                                    >4 PM</span
+                                >
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <span
+                                    class="bg-background text-muted-foreground/70 absolute -top-3 left-0 flex h-6 w-16 max-w-full items-center justify-end pe-2 text-[10px] sm:pe-4 sm:text-xs"
+                                    >5 PM</span
+                                >
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <span
+                                    class="bg-background text-muted-foreground/70 absolute -top-3 left-0 flex h-6 w-16 max-w-full items-center justify-end pe-2 text-[10px] sm:pe-4 sm:text-xs"
+                                    >6 PM</span
+                                >
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <span
+                                    class="bg-background text-muted-foreground/70 absolute -top-3 left-0 flex h-6 w-16 max-w-full items-center justify-end pe-2 text-[10px] sm:pe-4 sm:text-xs"
+                                    >7 PM</span
+                                >
+                            </div>
+                        </div>
+                        <div
+                            class="border-border/70 relative border-r last:border-r-0 grid auto-cols-fr"
+                            data-today="true"
+                        >
+                            <div
+                                class="absolute z-10 px-0.5"
+                                style="
+                                    top: 180px;
+                                    height: 180px;
+                                    left: 0%;
+                                    width: 100%;
+                                    z-index: 10;
+                                "
+                            >
+                                <div class="h-full w-full">
+                                    <div
+                                        class="touch-none"
+                                        style="height: 180px"
+                                    >
+                                        <button
+                                            class="focus-visible:border-ring focus-visible:ring-ring/50 flex h-full w-full overflow-hidden px-1 text-left font-medium backdrop-blur-md transition outline-none select-none focus-visible:ring-[3px] data-dragging:cursor-grabbing data-dragging:shadow-lg data-past-event:line-through sm:px-2 bg-blue-200/50 hover:bg-blue-200/40 text-blue-900/90 dark:bg-blue-400/25 dark:hover:bg-blue-400/20 dark:text-blue-200 shadow-blue-700/8 rounded py-1 flex-col text-[10px] sm:text-[13px]"
+                                            role="button"
+                                            tabindex="0"
+                                            aria-disabled="false"
+                                            aria-roledescription="draggable"
+                                            aria-describedby="«r2»"
+                                        >
+                                            <div class="truncate font-medium">
+                                                Quarterly Planning
+                                            </div>
+                                            <div
+                                                class="truncate font-normal opacity-70 sm:text-xs uppercase"
+                                            >
+                                                9:30am - 12pm
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="pointer-events-none absolute right-0 left-0 z-20"
+                                style="top: 36.0256%"
+                            >
+                                <div class="relative flex items-center">
+                                    <div
+                                        class="bg-red-500 absolute -left-1 h-2 w-2 rounded-full"
+                                    ></div>
+                                    <div
+                                        class="bg-red-500 h-[2px] w-full"
+                                    ></div>
+                                </div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="7:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="7:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="7:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="7:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="8:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="8:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="8:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="8:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="9:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="9:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="9:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="9:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="10:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="10:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="10:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="10:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="11:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="11:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="11:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="11:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="12:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="12:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="12:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="12:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="13:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="13:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="13:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="13:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="14:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="14:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="14:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="14:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="15:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="15:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="15:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="15:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="16:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="16:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="16:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="16:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="17:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="17:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="17:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="17:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="18:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="18:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="18:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="18:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="19:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="19:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="19:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="19:45"
+                                ></div>
+                            </div>
+                        </div>
+                        <div
+                            class="border-border/70 relative border-r last:border-r-0 grid auto-cols-fr"
+                        >
+                            <div
+                                class="absolute z-10 px-0.5"
+                                style="
+                                    top: 0px;
+                                    height: 108px;
+                                    left: 0%;
+                                    width: 100%;
+                                    z-index: 10;
+                                "
+                            >
+                                <div class="h-full w-full">
+                                    <div
+                                        class="touch-none"
+                                        style="height: 108px"
+                                    >
+                                        <button
+                                            class="focus-visible:border-ring focus-visible:ring-ring/50 flex h-full w-full overflow-hidden px-1 text-left font-medium backdrop-blur-md transition outline-none select-none focus-visible:ring-[3px] data-dragging:cursor-grabbing data-dragging:shadow-lg data-past-event:line-through sm:px-2 bg-violet-200/50 hover:bg-violet-200/40 text-violet-900/90 dark:bg-violet-400/25 dark:hover:bg-violet-400/20 dark:text-violet-200 shadow-violet-700/8 rounded py-1 flex-col text-[10px] sm:text-[13px]"
+                                            role="button"
+                                            tabindex="0"
+                                            aria-disabled="false"
+                                            aria-roledescription="draggable"
+                                            aria-describedby="«r2»"
+                                        >
+                                            <div class="truncate font-medium">
+                                                Vendor Meeting
+                                            </div>
+                                            <div
+                                                class="truncate font-normal opacity-70 sm:text-xs uppercase"
+                                            >
+                                                7am - 8:30am
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="absolute z-10 px-0.5"
+                                style="
+                                    top: 234px;
+                                    height: 180px;
+                                    left: 0%;
+                                    width: 100%;
+                                    z-index: 10;
+                                "
+                            >
+                                <div class="h-full w-full">
+                                    <div
+                                        class="touch-none"
+                                        style="height: 180px"
+                                    >
+                                        <button
+                                            class="focus-visible:border-ring focus-visible:ring-ring/50 flex h-full w-full overflow-hidden px-1 text-left font-medium backdrop-blur-md transition outline-none select-none focus-visible:ring-[3px] data-dragging:cursor-grabbing data-dragging:shadow-lg data-past-event:line-through sm:px-2 bg-emerald-200/50 hover:bg-emerald-200/40 text-emerald-900/90 dark:bg-emerald-400/25 dark:hover:bg-emerald-400/20 dark:text-emerald-200 shadow-emerald-700/8 rounded py-1 flex-col text-[10px] sm:text-[13px]"
+                                            role="button"
+                                            tabindex="0"
+                                            aria-disabled="false"
+                                            aria-roledescription="draggable"
+                                            aria-describedby="«r2»"
+                                        >
+                                            <div class="truncate font-medium">
+                                                Design Workshop
+                                            </div>
+                                            <div
+                                                class="truncate font-normal opacity-70 sm:text-xs uppercase"
+                                            >
+                                                10:15am - 12:45pm
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="absolute z-10 px-0.5"
+                                style="
+                                    top: 432px;
+                                    height: 108px;
+                                    left: 0%;
+                                    width: 100%;
+                                    z-index: 10;
+                                "
+                            >
+                                <div class="h-full w-full">
+                                    <div
+                                        class="touch-none"
+                                        style="height: 108px"
+                                    >
+                                        <button
+                                            class="focus-visible:border-ring focus-visible:ring-ring/50 flex h-full w-full overflow-hidden px-1 text-left font-medium backdrop-blur-md transition outline-none select-none focus-visible:ring-[3px] data-dragging:cursor-grabbing data-dragging:shadow-lg data-past-event:line-through sm:px-2 bg-orange-200/50 hover:bg-orange-200/40 text-orange-900/90 dark:bg-orange-400/25 dark:hover:bg-orange-400/20 dark:text-orange-200 shadow-orange-700/8 rounded py-1 flex-col text-[10px] sm:text-[13px]"
+                                            role="button"
+                                            tabindex="0"
+                                            aria-disabled="false"
+                                            aria-roledescription="draggable"
+                                            aria-describedby="«r2»"
+                                        >
+                                            <div class="truncate font-medium">
+                                                Lunch with CEO
+                                            </div>
+                                            <div
+                                                class="truncate font-normal opacity-70 sm:text-xs uppercase"
+                                            >
+                                                1pm - 2:30pm
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="7:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="7:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="7:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="7:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="8:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="8:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="8:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="8:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="9:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="9:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="9:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="9:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="10:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="10:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="10:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="10:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="11:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="11:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="11:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="11:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="12:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="12:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="12:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="12:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="13:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="13:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="13:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="13:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="14:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="14:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="14:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="14:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="15:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="15:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="15:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="15:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="16:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="16:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="16:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="16:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="17:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="17:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="17:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="17:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="18:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="18:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="18:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="18:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="19:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="19:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="19:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="19:45"
+                                ></div>
+                            </div>
+                        </div>
+                        <div
+                            class="border-border/70 relative border-r last:border-r-0 grid auto-cols-fr"
+                        >
+                            <div
+                                class="absolute z-10 px-0.5"
+                                style="
+                                    top: 288px;
+                                    height: 108px;
+                                    left: 0%;
+                                    width: 100%;
+                                    z-index: 10;
+                                "
+                            >
+                                <div class="h-full w-full">
+                                    <div
+                                        class="touch-none"
+                                        style="height: 108px"
+                                    >
+                                        <button
+                                            class="focus-visible:border-ring focus-visible:ring-ring/50 flex h-full w-full overflow-hidden px-1 text-left font-medium backdrop-blur-md transition outline-none select-none focus-visible:ring-[3px] data-dragging:cursor-grabbing data-dragging:shadow-lg data-past-event:line-through sm:px-2 bg-blue-200/50 hover:bg-blue-200/40 text-blue-900/90 dark:bg-blue-400/25 dark:hover:bg-blue-400/20 dark:text-blue-200 shadow-blue-700/8 rounded py-1 flex-col text-[10px] sm:text-[13px]"
+                                            role="button"
+                                            tabindex="0"
+                                            aria-disabled="false"
+                                            aria-roledescription="draggable"
+                                            aria-describedby="«r2»"
+                                        >
+                                            <div class="truncate font-medium">
+                                                Technical Review
+                                            </div>
+                                            <div
+                                                class="truncate font-normal opacity-70 sm:text-xs uppercase"
+                                            >
+                                                11am - 12:30pm
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="absolute z-10 px-0.5"
+                                style="
+                                    top: 594px;
+                                    height: 54px;
+                                    left: 0%;
+                                    width: 100%;
+                                    z-index: 10;
+                                "
+                            >
+                                <div class="h-full w-full">
+                                    <div
+                                        class="touch-none"
+                                        style="height: 54px"
+                                    >
+                                        <button
+                                            class="focus-visible:border-ring focus-visible:ring-ring/50 flex h-full w-full overflow-hidden px-1 text-left font-medium backdrop-blur-md transition outline-none select-none focus-visible:ring-[3px] data-dragging:cursor-grabbing data-dragging:shadow-lg data-past-event:line-through sm:px-2 bg-violet-200/50 hover:bg-violet-200/40 text-violet-900/90 dark:bg-violet-400/25 dark:hover:bg-violet-400/20 dark:text-violet-200 shadow-violet-700/8 rounded py-1 flex-col text-[10px] sm:text-[13px]"
+                                            role="button"
+                                            tabindex="0"
+                                            aria-disabled="false"
+                                            aria-roledescription="draggable"
+                                            aria-describedby="«r2»"
+                                        >
+                                            <div class="truncate font-medium">
+                                                Customer Call
+                                            </div>
+                                            <div
+                                                class="truncate font-normal opacity-70 sm:text-xs uppercase"
+                                            >
+                                                3:15pm - 4pm
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="7:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="7:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="7:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="7:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="8:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="8:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="8:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="8:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="9:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="9:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="9:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="9:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="10:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="10:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="10:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="10:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="11:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="11:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="11:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="11:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="12:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="12:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="12:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="12:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="13:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="13:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="13:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="13:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="14:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="14:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="14:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="14:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="15:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="15:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="15:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="15:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="16:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="16:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="16:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="16:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="17:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="17:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="17:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="17:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="18:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="18:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="18:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="18:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="19:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="19:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="19:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="19:45"
+                                ></div>
+                            </div>
+                        </div>
+                        <div
+                            class="border-border/70 relative border-r last:border-r-0 grid auto-cols-fr"
+                        >
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="7:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="7:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="7:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="7:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="8:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="8:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="8:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="8:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="9:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="9:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="9:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="9:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="10:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="10:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="10:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="10:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="11:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="11:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="11:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="11:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="12:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="12:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="12:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="12:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="13:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="13:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="13:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="13:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="14:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="14:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="14:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="14:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="15:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="15:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="15:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="15:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="16:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="16:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="16:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="16:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="17:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="17:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="17:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="17:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="18:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="18:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="18:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="18:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="19:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="19:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="19:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="19:45"
+                                ></div>
+                            </div>
+                        </div>
+                        <div
+                            class="border-border/70 relative border-r last:border-r-0 grid auto-cols-fr"
+                        >
+                            <div
+                                class="absolute z-10 px-0.5"
+                                style="
+                                    top: 126px;
+                                    height: 108px;
+                                    left: 0%;
+                                    width: 100%;
+                                    z-index: 10;
+                                "
+                            >
+                                <div class="h-full w-full">
+                                    <div
+                                        class="touch-none"
+                                        style="height: 108px"
+                                    >
+                                        <button
+                                            class="focus-visible:border-ring focus-visible:ring-ring/50 flex h-full w-full overflow-hidden px-1 text-left font-medium backdrop-blur-md transition outline-none select-none focus-visible:ring-[3px] data-dragging:cursor-grabbing data-dragging:shadow-lg data-past-event:line-through sm:px-2 bg-orange-200/50 hover:bg-orange-200/40 text-orange-900/90 dark:bg-orange-400/25 dark:hover:bg-orange-400/20 dark:text-orange-200 shadow-orange-700/8 rounded py-1 flex-col text-[10px] sm:text-[13px]"
+                                            role="button"
+                                            tabindex="0"
+                                            aria-disabled="false"
+                                            aria-roledescription="draggable"
+                                            aria-describedby="«r2»"
+                                        >
+                                            <div class="truncate font-medium">
+                                                Marketing Review
+                                            </div>
+                                            <div
+                                                class="truncate font-normal opacity-70 sm:text-xs uppercase"
+                                            >
+                                                8:45am - 10:15am
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="7:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="7:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="7:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="7:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="8:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="8:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="8:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="8:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="9:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="9:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="9:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="9:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="10:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="10:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="10:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="10:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="11:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="11:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="11:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="11:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="12:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="12:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="12:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="12:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="13:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="13:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="13:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="13:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="14:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="14:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="14:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="14:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="15:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="15:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="15:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="15:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="16:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="16:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="16:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="16:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="17:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="17:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="17:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="17:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="18:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="18:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="18:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="18:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="19:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="19:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="19:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="19:45"
+                                ></div>
+                            </div>
+                        </div>
+                        <div
+                            class="border-border/70 relative border-r last:border-r-0 grid auto-cols-fr"
+                        >
+                            <div
+                                class="absolute z-10 px-0.5"
+                                style="
+                                    top: 504px;
+                                    height: 180px;
+                                    left: 0%;
+                                    width: 100%;
+                                    z-index: 10;
+                                "
+                            >
+                                <div class="h-full w-full">
+                                    <div
+                                        class="touch-none"
+                                        style="height: 180px"
+                                    >
+                                        <button
+                                            class="focus-visible:border-ring focus-visible:ring-ring/50 flex h-full w-full overflow-hidden px-1 text-left font-medium backdrop-blur-md transition outline-none select-none focus-visible:ring-[3px] data-dragging:cursor-grabbing data-dragging:shadow-lg data-past-event:line-through sm:px-2 bg-blue-200/50 hover:bg-blue-200/40 text-blue-900/90 dark:bg-blue-400/25 dark:hover:bg-blue-400/20 dark:text-blue-200 shadow-blue-700/8 rounded py-1 flex-col text-[10px] sm:text-[13px]"
+                                            role="button"
+                                            tabindex="0"
+                                            aria-disabled="false"
+                                            aria-roledescription="draggable"
+                                            aria-describedby="«r2»"
+                                        >
+                                            <div class="truncate font-medium">
+                                                Product Roadmap
+                                            </div>
+                                            <div
+                                                class="truncate font-normal opacity-70 sm:text-xs uppercase"
+                                            >
+                                                2pm - 4:30pm
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="7:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="7:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="7:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="7:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="8:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="8:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="8:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="8:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="9:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="9:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="9:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="9:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="10:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="10:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="10:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="10:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="11:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="11:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="11:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="11:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="12:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="12:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="12:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="12:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="13:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="13:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="13:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="13:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="14:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="14:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="14:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="14:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="15:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="15:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="15:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="15:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="16:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="16:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="16:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="16:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="17:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="17:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="17:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="17:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="18:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="18:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="18:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="18:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="19:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="19:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="19:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="19:45"
+                                ></div>
+                            </div>
+                        </div>
+                        <div
+                            class="border-border/70 relative border-r last:border-r-0 grid auto-cols-fr"
+                        >
+                            <div
+                                class="absolute z-10 px-0.5"
+                                style="
+                                    top: 0px;
+                                    height: 36px;
+                                    left: 0%;
+                                    width: 100%;
+                                    z-index: 10;
+                                "
+                            >
+                                <div class="h-full w-full">
+                                    <div
+                                        class="touch-none"
+                                        style="height: 36px"
+                                    >
+                                        <button
+                                            class="focus-visible:border-ring focus-visible:ring-ring/50 flex h-full w-full overflow-hidden px-1 text-left font-medium backdrop-blur-md transition outline-none select-none focus-visible:ring-[3px] data-dragging:cursor-grabbing data-dragging:shadow-lg data-past-event:line-through sm:px-2 bg-rose-200/50 hover:bg-rose-200/40 text-rose-900/90 dark:bg-rose-400/25 dark:hover:bg-rose-400/20 dark:text-rose-200 shadow-rose-700/8 rounded py-1 items-center text-[10px] sm:text-[13px]"
+                                            role="button"
+                                            tabindex="0"
+                                            aria-disabled="false"
+                                            aria-roledescription="draggable"
+                                            aria-describedby="«r2»"
+                                        >
+                                            <div class="truncate">
+                                                Family Time
+                                                <span class="opacity-70"
+                                                    >7am</span
+                                                >
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="absolute z-10 px-0.5"
+                                style="
+                                    top: 216px;
+                                    height: 36px;
+                                    left: 0%;
+                                    width: 100%;
+                                    z-index: 10;
+                                "
+                            >
+                                <div class="h-full w-full">
+                                    <div
+                                        class="touch-none"
+                                        style="height: 36px"
+                                    >
+                                        <button
+                                            class="focus-visible:border-ring focus-visible:ring-ring/50 flex h-full w-full overflow-hidden px-1 text-left font-medium backdrop-blur-md transition outline-none select-none focus-visible:ring-[3px] data-dragging:cursor-grabbing data-dragging:shadow-lg data-past-event:line-through sm:px-2 bg-rose-200/50 hover:bg-rose-200/40 text-rose-900/90 dark:bg-rose-400/25 dark:hover:bg-rose-400/20 dark:text-rose-200 shadow-rose-700/8 rounded py-1 items-center text-[10px] sm:text-[13px]"
+                                            role="button"
+                                            tabindex="0"
+                                            aria-disabled="false"
+                                            aria-roledescription="draggable"
+                                            aria-describedby="«r2»"
+                                        >
+                                            <div class="truncate">
+                                                Family Time
+                                                <span class="opacity-70"
+                                                    >10am</span
+                                                >
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="7:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="7:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="7:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="7:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="8:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="8:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="8:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="8:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="9:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="9:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="9:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="9:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="10:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="10:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="10:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="10:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="11:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="11:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="11:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="11:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="12:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="12:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="12:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="12:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="13:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="13:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="13:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="13:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="14:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="14:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="14:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="14:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="15:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="15:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="15:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="15:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="16:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="16:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="16:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="16:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="17:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="17:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="17:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="17:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="18:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="18:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="18:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="18:45"
+                                ></div>
+                            </div>
+                            <div
+                                class="border-border/70 relative min-h-[var(--week-cells-height)] border-b last:border-b-0"
+                            >
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-0"
+                                    title="19:00"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4)]"
+                                    title="19:15"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*2)]"
+                                    title="19:30"
+                                ></div>
+                                <div
+                                    class="data-dragging:bg-accent flex flex-col px-0.5 py-1 sm:px-1 absolute h-[calc(var(--week-cells-height)/4)] w-full top-[calc(var(--week-cells-height)/4*3)]"
+                                    title="19:45"
+                                ></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="«r2»" style="display: none">
+                To pick up a draggable item, press the space bar. While
+                dragging, use the arrow keys to move the item. Press space again
+                to drop the item in its new position, or press escape to cancel.
+            </div>
+            <div
+                id="DndLiveRegion-0"
+                role="status"
+                aria-live="assertive"
+                aria-atomic="true"
+                style="
+                    position: fixed;
+                    top: 0px;
+                    left: 0px;
+                    width: 1px;
+                    height: 1px;
+                    margin: -1px;
+                    border: 0px;
+                    padding: 0px;
+                    overflow: hidden;
+                    clip: rect(0px, 0px, 0px, 0px);
+                    clip-path: inset(100%);
+                    white-space: nowrap;
+                "
+            ></div>
+        </div>
+    </div>
+</main>

@@ -20,6 +20,8 @@ interface QuizQuestion {
   category: DefaultClassGroupIds
   correctAnswer: string
   options: string[]
+  elementIndex: number
+  originalCategories: string[]
 }
 
 export async function loader({ params }: Route.LoaderArgs) {
@@ -107,32 +109,48 @@ export default function QuizDesign({ loaderData }: Route.ComponentProps) {
     const validElementIndices: number[] = []
 
     Array.from(quizElements).forEach((element, index) => {
-      const category = element.getAttribute('data-quiz') as DefaultClassGroupIds
-      const relevantClasses = getElementClassesForCategory(element, category)
-
-      if (relevantClasses.length === 0) {
-        // Skip this question - no relevant classes found
-        const elementInfo = {
-          element: element.tagName.toLowerCase(),
-          category,
-          reason: `No classes found for category '${category}'`
-        }
-        skippedQuestions.push(elementInfo)
-        console.log(`[Quiz Skip] Skipping question ${index + 1}:`, elementInfo)
+      const dataQuizValue = element.getAttribute('data-quiz') || ''
+      const categories = dataQuizValue.split(',').map(cat => cat.trim()).filter(cat => cat.length > 0)
+      
+      if (categories.length === 0) {
+        console.log(`[Quiz Skip] Skipping element ${index + 1}: no data-quiz attribute`)
         return
       }
 
-      const correctAnswer = relevantClasses[0]
+      let hasValidQuestions = false
 
-      // Track the DOM index of this valid question
-      validElementIndices.push(index)
+      categories.forEach((category) => {
+        const relevantClasses = getElementClassesForCategory(element, category as DefaultClassGroupIds)
 
-      extractedQuestions.push({
-        element: element.outerHTML,
-        category,
-        correctAnswer,
-        options: generatePlaceholderOptions(correctAnswer, category)
+        if (relevantClasses.length === 0) {
+          // Skip this category - no relevant classes found
+          const elementInfo = {
+            element: element.tagName.toLowerCase(),
+            category,
+            reason: `No classes found for category '${category}'`
+          }
+          skippedQuestions.push(elementInfo)
+          console.log(`[Quiz Skip] Skipping category '${category}' for element ${index + 1}:`, elementInfo)
+          return
+        }
+
+        const correctAnswer = relevantClasses[0]
+        hasValidQuestions = true
+
+        extractedQuestions.push({
+          element: element.outerHTML,
+          category: category as DefaultClassGroupIds,
+          correctAnswer,
+          options: generatePlaceholderOptions(correctAnswer, category as DefaultClassGroupIds),
+          elementIndex: index,
+          originalCategories: categories
+        })
       })
+
+      // Track the DOM index if this element has at least one valid question
+      if (hasValidQuestions) {
+        validElementIndices.push(index)
+      }
     })
 
     if (skippedQuestions.length > 0) {
@@ -145,12 +163,12 @@ export default function QuizDesign({ loaderData }: Route.ComponentProps) {
     }
 
     console.log(`[Quiz Info] Created ${extractedQuestions.length} valid quiz questions`)
-    console.log(`[Quiz Info] Valid element indices:`, validElementIndices)
+    console.log(`[Quiz Info] Questions by element:`, extractedQuestions.reduce((acc, q) => {
+      acc[q.elementIndex] = (acc[q.elementIndex] || []).concat(q.category)
+      return acc
+    }, {} as Record<number, string[]>))
 
     setQuestions(extractedQuestions)
-
-    // Store the mapping for highlighting
-    ;(window as any).__quizValidElementIndices = validElementIndices
   }, [htmlContent])
 
   // Highlight current quiz element
@@ -175,17 +193,15 @@ export default function QuizDesign({ loaderData }: Route.ComponentProps) {
       throw new Error('No quiz elements found in rendered HTML')
     }
 
-    // Get the mapping of valid element indices
-    const validElementIndices = (window as any).__quizValidElementIndices as number[]
-
-    if (!validElementIndices || currentQuestionIndex >= validElementIndices.length) {
-      console.error(`[Quiz Error] Question index ${currentQuestionIndex} is out of bounds for valid questions. Only ${validElementIndices?.length || 0} valid questions found.`)
-      throw new Error(`Question index out of bounds: ${currentQuestionIndex}/${validElementIndices?.length || 0}`)
+    // Get the DOM element index for the current question
+    if (currentQuestionIndex >= questions.length) {
+      console.error(`[Quiz Error] Question index ${currentQuestionIndex} is out of bounds for valid questions. Only ${questions.length} valid questions found.`)
+      throw new Error(`Question index out of bounds: ${currentQuestionIndex}/${questions.length}`)
     }
 
-    // Get the DOM index for the current question
-    const domElementIndex = validElementIndices[currentQuestionIndex]
-    console.log(`[Quiz Debug] Question ${currentQuestionIndex + 1} maps to DOM element ${domElementIndex + 1}`)
+    const currentQuestion = questions[currentQuestionIndex]
+    const domElementIndex = currentQuestion.elementIndex
+    console.log(`[Quiz Debug] Question ${currentQuestionIndex + 1} (${currentQuestion.category}) maps to DOM element ${domElementIndex + 1}`)
 
     // Get the current quiz element by its DOM index
     const currentElement = allQuizElements[domElementIndex]
